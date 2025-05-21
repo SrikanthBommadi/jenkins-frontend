@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'jenkins-agent' }
     environment { 
-        PROJECT = 'cluster'
+        PROJECT = 'project'
         COMPONENT = 'frontend'
         appVersion = ''
         ACC_ID = '010526266250'
@@ -45,7 +45,7 @@ pipeline {
                 expression { params.deploy }
             }
             steps{
-                build job: 'frontend-cd', parameters: [string(name: 'version', value: "${appVersion}")], wait: true
+                build job: 'frontend-helm', parameters: [string(name: 'version', value: "${appVersion}")], wait: true
             }
         }
     }
