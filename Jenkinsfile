@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'jenkins-agent' }
     environment { 
-        PROJECT = 'project'
+        PROJECT = 'cluster'
         COMPONENT = 'frontend'
         appVersion = ''
         ACC_ID = '010526266250'
